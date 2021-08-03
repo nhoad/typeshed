@@ -8,9 +8,9 @@ _VT = TypeVar("_VT")
 class RRCache(Cache[_KT, _VT]):
     def __init__(
         self,
-        maxsize: float,
+        maxsize: int | None,
         choice: Optional[Callable[[Sequence[_KT]], _KT]] = ...,
-        getsizeof: Optional[Callable[[_VT], float]] = ...,
+        getsizeof: Optional[Callable[[_VT], int]] = ...,
     ) -> None: ...
     def __getitem__(self, key: _KT) -> _VT: ...
     def __setitem__(self, key: _KT, value: _VT) -> None: ...
